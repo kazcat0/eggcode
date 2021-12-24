@@ -29,9 +29,11 @@ class Egg:
         self.height = 0 # meters
         self.weight = 0 # kilograms
         self.birthdate = 0 # time?
+        self.moisture = 0 #dryness to wetness
+        self.telepathy = 0 #egg chattiness
     
     def __repr__(self):
-        return f"Egg(height = {self.height} meters, weight = {self.weight}kg, birthdate = {self.birthdate})"
+        return f"Egg(height = {self.height} meters, weight = {self.weight}kg, birthdate = {self.birthdate}, moisture = {self.moisture})"
 
 METERS = 1
 KILOGRAMS = 1
@@ -49,7 +51,7 @@ def birth_egg():
     print("You wake up. It is noon. Saturday. 3pm.")
     print("You get up and hit the showers.")
     print("On the way, you trip and stumble over an egg.")
-    print("You don't remember there an egg.")
+    print("You don't remember there being an egg.")
     print("How do you think it got here?")
     divider()
     options = {
@@ -62,14 +64,17 @@ def birth_egg():
     if choice == "1":
         egg.height = 5 * CENTIMETERS
         egg.weight = 100 * GRAMS
+        egg.moisture  = "dry"
         print("That's right, you laid a small egg last night.")
     elif choice == "2":
         egg.height = 1 * METERS
         egg.weight = 50 * KILOGRAMS
+        egg.moisture  = "average"
         print("You see the door has been kicked in. Uh-oh.")
     elif choice == "3":
         egg.height = 30 * CENTIMETERS
         egg.weight = 2 * KILOGRAMS
+        egg.moisture  = "wet"
         print("You scienced up a ruler-sized egg.")
     egg.height *= random_percent(0, 10)
     egg.weight *= random_percent(0, 10)
